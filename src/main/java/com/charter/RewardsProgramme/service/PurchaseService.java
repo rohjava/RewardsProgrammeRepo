@@ -1,35 +1,19 @@
 package com.charter.RewardsProgramme.service;
 
+import com.charter.RewardsProgramme.entity.CustomerRewardCountInterface;
 import com.charter.RewardsProgramme.entity.Purchase;
-import com.charter.RewardsProgramme.model.custom.CustomerRewardCountInterface;
-import com.charter.RewardsProgramme.respository.PurchaseRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
 
-public class PurchaseService {
+public interface PurchaseService {
+    Purchase savePurchase(Purchase purchase);
 
-    @Autowired
-    PurchaseRepository purchaseRepository;
-    public Purchase savePurchase(Purchase purchase) {
+    List<CustomerRewardCountInterface> fetchTotalRewards();
 
-        return purchaseRepository.save(purchase);
-    }
+    List<CustomerRewardCountInterface> fetchTotalRewardsByDateRange(Date fromDate, Date toDate);
 
+    List<CustomerRewardCountInterface> fetchTotalRewardsByCustomerId(Long customerId);
 
-
-    public List<CustomerRewardCountInterface> fetchTotalRewards() {
-        return purchaseRepository.fetchTotalRewards();
-    }
-
-    public List<CustomerRewardCountInterface> fetchTotalRewardsByDateRange(Date startDate, Date endDate) {
-        return purchaseRepository.fetchTotalRewardsByDateRange(startDate, endDate);
-    }
-    public List<CustomerRewardCountInterface> fetchTotalRewardsByCustomerId(Long customerId) {
-        return purchaseRepository.fetchTotalRewardsByCustomerId(customerId);
-    }
-    public List<CustomerRewardCountInterface> fetchRewardsByByCustomerIdAndDateRange(Long customerId, Date startDate, Date endDate) {
-        return purchaseRepository.fetchRewardsByByCustomerIdAndDateRange(customerId,startDate,endDate);
-    }
+    List<CustomerRewardCountInterface> fetchRewardsByByCustomerIdAndDateRange(Long customerId, Date fromDate, Date toDate);
 }

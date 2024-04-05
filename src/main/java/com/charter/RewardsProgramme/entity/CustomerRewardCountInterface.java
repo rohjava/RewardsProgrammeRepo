@@ -1,4 +1,4 @@
-package com.charter.RewardsProgramme.model.custom;
+package com.charter.RewardsProgramme.entity;
 
 public interface CustomerRewardCountInterface {
     public Long getCustomerId();
