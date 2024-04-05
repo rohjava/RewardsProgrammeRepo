@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "04d45559-2d1b-4946-b215-7d7140a4211e",
+		"name": "PurchaseApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33383012"
+	},
+	"item": [
+		{
+			"name": "savePurchase",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getTotalRewards",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
